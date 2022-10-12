@@ -114,19 +114,6 @@
     },
     "resources": [
       {
-          "type": "Microsoft.Authorization/roleAssignments",
-          "apiVersion": "2020-04-01-preview",
-          "name": "[guid(resourceGroup().id)]",
-          "dependsOn": [
-            "[parameters('vnetName')]"
-          ],  
-          "properties": {
-              "roleDefinitionId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
-              "principalId": "[parameters('aro_rp_obj_id')]",
-              "scope": "[resourceGroup().id]"
-          }
-      },
-      {
         "type": "Microsoft.Network/virtualNetworks",
         "apiVersion": "2020-05-01",
         "name": "[parameters('vnetName')]",
